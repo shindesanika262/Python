@@ -1,0 +1,497 @@
+
+/* =========================
+   Default React/Vite styles
+   ========================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* =========================
+   Video Assessment Theme
+   ========================= */
+
+.assessment-page {
+  --brand: #8b0000;
+  --brand-dark: #5f0000;
+  --brand-light: #fff0f0;
+  --ink: #242424;
+  --muted: #666;
+  --line: #e5e5e5;
+  --surface: #ffffff;
+  --page: #f5f6f8;
+
+  width: 100%;
+  min-height: 100vh;
+  background: var(--page);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+.assessment-page *,
+.assessment-page *::before,
+.assessment-page *::after {
+  box-sizing: border-box;
+}
+
+/* =========================
+   Header
+   ========================= */
+
+.assessment-page header {
+  background: linear-gradient(
+    135deg,
+    var(--brand-dark),
+    var(--brand)
+  );
+  color: white;
+  padding: 28px 18px;
+  text-align: center;
+}
+
+.assessment-page header .brand {
+  margin: 0 0 5px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.assessment-page header h1,
+.assessment-page header h2 {
+  margin: 0;
+  color: white;
+  text-align: center;
+}
+
+.assessment-page header h1 {
+  font-size: clamp(24px, 4vw, 36px);
+  line-height: 1.3;
+}
+
+.assessment-page header h2 {
+  margin-top: 8px;
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+.assessment-page header p {
+  margin: 8px 0 0;
+  color: #ffe6e6;
+  text-align: center;
+}
+
+/* =========================
+   Main layout
+   ========================= */
+
+.assessment-page main {
+  width: 100%;
+  max-width: 960px;
+  margin: 24px auto;
+  padding: 0 16px 36px;
+}
+
+.assessment-page .card {
+  margin-bottom: 18px;
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.035);
+}
+
+.assessment-page h2 {
+  margin: 0 0 14px;
+  font-size: 20px;
+  text-align: left;
+}
+
+.assessment-page h3 {
+  text-align: left;
+}
+
+.assessment-page .intro {
+  margin-top: 5px;
+  color: var(--muted);
+  text-align: left;
+}
+
+/* =========================
+   Student and mentor fields
+   ========================= */
+
+.assessment-page .fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.assessment-page .fields label,
+.assessment-page .fields input {
+  text-align: left;
+}
+
+.assessment-page label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.assessment-page input[type="text"],
+.assessment-page input[type="number"],
+.assessment-page input[type="date"],
+.assessment-page textarea,
+.assessment-page select {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #cfd2d8;
+  border-radius: 8px;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+}
+
+.assessment-page input:focus,
+.assessment-page textarea:focus,
+.assessment-page select:focus {
+  outline: 2px solid #e5a4a4;
+  border-color: var(--brand);
+}
+
+.assessment-page textarea {
+  resize: vertical;
+}
+
+/* =========================
+   Assessment criteria
+   ========================= */
+
+.assessment-page .criterion {
+  margin-top: 12px;
+  padding: 15px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.assessment-page .criterion-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.assessment-page .criterion h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.assessment-page .criterion p {
+  margin: 4px 0 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.assessment-page .score {
+  min-width: 56px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  background: var(--brand-light);
+  color: var(--brand);
+  font-weight: 700;
+  text-align: center;
+}
+
+.assessment-page input[type="range"] {
+  width: 100%;
+  accent-color: var(--brand);
+  cursor: pointer;
+}
+
+.assessment-page .range-labels {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* =========================
+   Overall score
+   ========================= */
+
+.assessment-page .summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid #ecd5d5;
+  border-radius: 12px;
+  background: #faf5f5;
+}
+
+.assessment-page .summary small {
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.assessment-page .total {
+  color: var(--brand);
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.assessment-page .total-max {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.assessment-page .level {
+  font-size: 17px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.assessment-page .summary p,
+.assessment-page .level-description {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =========================
+   Feedback
+   ========================= */
+
+.assessment-page .feedback-area {
+  margin-top: 20px;
+}
+
+.assessment-page .feedback-area textarea {
+  display: block;
+}
+
+/* =========================
+   Buttons
+   ========================= */
+
+.assessment-page .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.assessment-page button {
+  padding: 11px 16px;
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.assessment-page .primary {
+  background: var(--brand);
+  color: white;
+}
+
+.assessment-page .primary:hover {
+  background: var(--brand-dark);
+}
+
+.assessment-page .primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.assessment-page .secondary {
+  border: 1px solid var(--brand);
+  background: white;
+  color: var(--brand);
+}
+
+.assessment-page .secondary:hover {
+  background: var(--brand-light);
+}
+
+.assessment-page .neutral {
+  background: #eceef1;
+  color: #292929;
+}
+
+.assessment-page .neutral:hover {
+  background: #dfe2e7;
+}
+
+/* =========================
+   Success and error messages
+   ========================= */
+
+.assessment-page .message {
+  min-height: 22px;
+  margin-top: 8px;
+  color: #246b37;
+  font-size: 14px;
+  white-space: pre-line;
+}
+
+.assessment-page .message.error {
+  color: #b42318;
+}
+
+/* =========================
+   Scoring rubric
+   ========================= */
+
+.assessment-page .rubric,
+.assessment-page .scoring-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.assessment-page .rubric div,
+.assessment-page .scoring-level {
+  padding: 12px;
+  border-radius: 8px;
+  background: #f7f7f8;
+  text-align: left;
+}
+
+.assessment-page .rubric strong,
+.assessment-page .scoring-level strong {
+  display: block;
+}
+
+.assessment-page .rubric p,
+.assessment-page .scoring-level p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.assessment-page .readiness-bands {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.assessment-page footer {
+  padding: 8px 16px 24px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* =========================
+   Responsive layout
+   ========================= */
+
+@media (max-width: 620px) {
+  .assessment-page .fields,
+  .assessment-page .rubric,
+  .assessment-page .scoring-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .assessment-page .card {
+    padding: 16px;
+  }
+
+  .assessment-page .summary {
+    align-items: flex-start;
+  }
+
+  .assessment-page .criterion-top {
+    gap: 8px;
+  }
+
+  .assessment-page .range-labels {
+    font-size: 10px;
+  }
+
+  .assessment-page .actions button {
+    width: 100%;
+  }
+}
+
+/* =========================
+   Print / Save as PDF
+   ========================= */
+
+@media print {
+  #root {
+    padding: 0;
+  }
+
+  .assessment-page {
+    background: white;
+  }
+
+  .assessment-page header {
+    padding: 12px;
+    border-bottom: 2px solid var(--brand);
+    background: white;
+    color: #111;
+  }
+
+  .assessment-page header h1,
+  .assessment-page header h2 {
+    color: #111;
+  }
+
+  .assessment-page header p {
+    color: #333;
+  }
+
+  .assessment-page main {
+    max-width: none;
+    margin: 10px auto;
+  }
+
+  .assessment-page .card {
+    padding: 12px;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .assessment-page .actions,
+  .assessment-page .message,
+  .assessment-page footer {
+    display: none !important;
+  }
+
+  .assessment-page input,
+  .assessment-page textarea,
+  .assessment-page select {
+    border: 1px solid #aaa;
+  }
+
+  .assessment-page .criterion,
+  .assessment-page .scoring-level {
+    break-inside: avoid;
+  }
+
+  .assessment-page input[type="range"] {
+    print-color-adjust: exact;
+  }
+}

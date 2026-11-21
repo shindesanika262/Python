@@ -1,0 +1,45 @@
+using Microsoft.AspNetCore.Mvc;
+using backend.Services.Interfaces;
+using System.Threading.Tasks;
+
+namespace backend.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class StudentsController : ControllerBase
+    {
+        private readonly IStudentsService _service;
+
+        public StudentsController(IStudentsService service)
+        {
+            _service = service;
+        }
+
+        [HttpGet("total")]
+        public async Task<IActionResult> GetTotalStudents()
+        {
+            var result = await _service.GetTotalStudents();
+            return Ok(result);
+        }
+
+         [HttpGet]
+        public async Task<IActionResult> GetStudents()
+        {
+            var students = await _service.GetAllStudents();
+            return Ok(students);
+        }
+
+        [HttpGet("performance/{studentId}")]
+        public async Task<IActionResult> GetStudentPerformance(long studentId)
+        {
+            var result = await _service.GetStudentPerformance(studentId);
+
+            if (result == null)
+            {
+                return NotFound("No performance found.");
+            }
+
+            return Ok(result);
+        }
+    }
+}

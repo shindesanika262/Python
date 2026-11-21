@@ -1,0 +1,60 @@
+using backend.DTO.Requests;
+using backend.DTO.Responses;
+using backend.Repositories.Interfaces;
+using backend.Services.Interfaces;
+
+namespace backend.Services
+{
+    public class CreateTestService : Interfaces.ICreateTestService
+    {
+        private readonly ICreateTestRepository _repo;
+
+        public CreateTestService(ICreateTestRepository repo)
+        {
+            _repo = repo;
+        }
+
+        public Task<List<TestQuestions>> GetQuestionsBySMEAsync(long userId)
+            => _repo.GetQuestionsBySMEAsync(userId);
+
+        public Task<long> CreateTestAsync(CreateTestRequests dto)
+            => _repo.CreateTestAsync(dto);
+
+            
+        public async Task<bool> CancelTestAsync(int id)
+        {
+            return await _repo.CancelTestAsync(id);
+        }
+
+        public async Task<List<GetSmeCreatedTestResponse>> GetSmeCreatedTestAsync(long userId)
+        {
+        return await _repo.GetSmeCreatedTestAsync(userId);
+        }
+
+        public async Task<List<TestDetails>> GetTestDetailsForMentor()
+        {
+            return await _repo.GetTestDetailsForMentor();
+        }
+
+        public async Task<List<TestStudentDetails>> GetTestStudentsDetails(long TestId)
+        {
+            return await _repo.GetTestStudentsDetails(TestId);
+        }
+
+        public async Task<int> GetTestCount()
+        {
+            return await _repo.GetTestCount();
+        }
+
+        public async Task<int> GetSmeCreatedTest(long userId)  //getSmeTestCount
+        {
+            return await _repo.GetSmeCreatedTest(userId);
+        }
+
+        public async Task<int> GetMenteeCount(long userId)
+        {
+            return await _repo.GetMenteeCount(userId);
+        }
+
+    }
+}

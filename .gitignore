@@ -221,3 +221,63 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ruff_cache/
+
+# Node.js
+node_modules/
+dist/
+npm-debug.log*
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# IDE
+.vscode/
+.idea/
+
+# Cache
+.pytest_cache/
+.mypy_cache/
+
+# .NET generated files
+**/bin/
+**/obj/
+
+# Python
+**/__pycache__/
+**/.venv/
+**/venv/
+**/.pytest_cache/
+
+# Node
+**/node_modules/
+**/dist/
+
+# Secrets
+**/.env
+**/.env.*
+!**/.env.example
+
+# Temporary files
+**/tempCodeRunnerFile.*
+TFLComentor/Solution/Backend/dotnet/webapi/appsettings*.json
+TFLComentor/Solution/Backend/java/webapi/src/main/resources/application.properties
+TFLComentor/Solution/Backend/nodejs/webapi/src/connectivity/db.js
+TFLComentor/Solution/Backend/python/webapi/ProductsAPI/products/repositories/product_db_repository.py
+TFLComentor/Solution/infrastructure/JsonFilesBkp/
+TFLComentor/Solution/infrastructure/bkp/
+TFLComentor/Solution/Backend/java/webapi/src/main/resources/Data/
+TFLComentor/Solution/Backend/python/webapi/AuthAPI/users.json
+TFLComentor/Solution/tempCodeRunnerFile.bat
+TFLComentor/Solution/AI/V3_TFLRAG_RoleBased/backend/data/ 
+TFLComentor/Solution/AI/V4_TFLRAG_API_Integration/backend/data/
